@@ -5,157 +5,364 @@
 <title>LSPD Bewerbung – Grand RP</title>
 
 <style>
-    /* Hintergrund mit Naturbild + Blur */
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80") no-repeat center center fixed;
-        background-size: cover;
-        color: #e6e6e6;
-        display: flex;
-        justify-content: center;
-        padding: 40px 0;
-        cursor: none;
-        position: relative;
-    }
+/* Hintergrund mit Naturbild + Blur */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80") no-repeat center center fixed;
+    background-size: cover;
+    color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    cursor: none;
+    position: relative;
+}
 
-    /* Blur Overlay */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        backdrop-filter: blur(12px) brightness(0.45);
-        z-index: -1;
-    }
+/* Blur Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(12px) brightness(0.45);
+    z-index: -1;
+}
 
-    /* Neon Cursor */
-    .neon-cursor {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 153, 255, 0.15);
-        border: 2px solid #009dff;
-        box-shadow: 0 0 15px #009dff, 0 0 30px #009dff;
-        transition: transform 0.08s linear;
-        z-index: 9999;
-    }
+/* Neon Cursor */
+.neon-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 153, 255, 0.15);
+    border: 2px solid #009dff;
+    box-shadow: 0 0 15px #009dff, 0 0 30px #009dff;
+    transition: transform 0.08s linear;
+    z-index: 9999;
+}
 
-    /* Container */
-    .container {
-        width: 65%;
-        background: rgba(30, 30, 30, 0.85);
-        padding: 40px;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 0 25px rgba(0, 140, 255, 0.4);
-        border: 1px solid rgba(0, 140, 255, 0.4);
-        backdrop-filter: blur(6px);
-        animation: fadeIn 1s ease;
-    }
+/* Container */
+.container {
+    width: 65%;
+    background: rgba(30, 30, 30, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 140, 255, 0.4);
+    border: 1px solid rgba(0, 140, 255, 0.4);
+    backdrop-filter: blur(6px);
+    animation: fadeIn 1s ease;
+}
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    /* Neon Linie */
-    .neon-line {
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, #009dff, transparent);
-        margin: 25px 0;
-        box-shadow: 0 0 10px #009dff;
-    }
+/* Neon Linie */
+.neon-line {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #009dff, transparent);
+    margin: 25px 0;
+    box-shadow: 0 0 10px #009dff;
+}
 
-    /* LSPD Stern */
-    .lspd-star {
-        width: 180px;
-        filter: drop-shadow(0 0 12px #009dff);
-        margin-bottom: 20px;
-    }
+/* LSPD Stern */
+.lspd-star {
+    width: 180px;
+    filter: drop-shadow(0 0 12px #009dff);
+    margin-bottom: 20px;
+}
 
-    h1 {
-        color: #4aa3ff;
-        text-shadow: 0 0 10px #0077cc;
-        margin-bottom: 10px;
-    }
+h1 {
+    color: #4aa3ff;
+    text-shadow: 0 0 10px #0077cc;
+    margin-bottom: 10px;
+}
 
-    h2 {
-        color: #4aa3ff;
-        margin-top: 35px;
-        text-shadow: 0 0 8px #006bb3;
-    }
+h2 {
+    color: #4aa3ff;
+    margin-top: 35px;
+    text-shadow: 0 0 8px #006bb3;
+}
 
-    p, li {
-        line-height: 1.7;
-        font-size: 17px;
-    }
+p, li {
+    line-height: 1.7;
+    font-size: 17px;
+}
 
-    .info-box {
-        background: rgba(50, 50, 50, 0.7);
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        text-align: left;
-        border-left: 4px solid #009dff;
-        box-shadow: 0 0 10px rgba(0, 140, 255, 0.3);
-    }
+.info-box {
+    background: rgba(50, 50, 50, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+    border-left: 4px solid #009dff;
+    box-shadow: 0 0 10px rgba(0, 140, 255, 0.3);
+}
 
-    .info-box strong {
-        color: #4aa3ff;
-    }
+.info-box strong {
+    color: #4aa3ff;
+}
 
-    ul {
-        text-align: left;
-        margin-left: 20%;
-    }
+ul {
+    text-align: left;
+    margin-left: 20%;
+}
 
-    .rank-list {
-        background: rgba(50, 50, 50, 0.7);
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-        text-align: left;
-        border-left: 4px solid #009dff;
-        box-shadow: 0 0 10px rgba(0, 140, 255, 0.3);
-    }
+.footer {
+    margin-top: 30px;
+    font-style: italic;
+    color: #b5b5b5;
+}
 
-    .footer {
-        margin-top: 30px;
-        font-style: italic;
-        color: #b5b5b5;
-    }
+/* Forum Button */
+.forum-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: rgba(0, 157, 255, 0.2);
+    border: 2px solid #009dff;
+    border-radius: 10px;
+    color: #4aa3ff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 12px #009dff;
+    transition: 0.25s ease;
+}
 
-    /* Forum Button */
-    .forum-button {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 14px 28px;
-        background: rgba(0, 157, 255, 0.2);
-        border: 2px solid #009dff;
-        border-radius: 10px;
-        color: #4aa3ff;
-        font-size: 18px;
-        font-weight: bold;
-        text-decoration: none;
-        box-shadow: 0 0 12px #009dff;
-        transition: 0.25s ease;
-    }
+.forum-button:hover {
+    background: rgba(0, 157, 255, 0.35);
+    box-shadow: 0 0 18px #33b5ff, 0 0 30px #009dff;
+    transform: scale(1.05);
+}
 
-    .forum-button:hover {
-        background: rgba(0, 157, 255, 0.35);
-        box-shadow: 0 0 18px #33b5ff, 0 0 30px #009dff;
-        transform: scale(1.05);
-    }
+/* Welcome Popup Overlay */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+/* Welcome Popup Box */
+.welcome-box {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 35px;
+    width: 420px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #009dff;
+    box-shadow: 0 0 25px #009dff, 0 0 50px #009dff;
+    animation: fadeInPopup 0.6s ease;
+}
+
+@keyframes fadeInPopup {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Fade-Out Animation */
+.popup-hide {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+.welcome-box h2 {
+    color: #4aa3ff;
+    text-shadow: 0 0 10px #0077cc;
+    margin-bottom: 15px;
+}
+
+.welcome-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #dcdcdc;
+    margin-bottom: 25px;
+}
+
+/* OK Button */
+.welcome-btn {
+    background: #009dff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #009dff;
+    transition: 0.2s;
+}
+
+.welcome-btn:hover {
+    background: #007acc;
+    box-shadow: 0 0 25px #009dff;
+    transform: scale(1.05);
+}
+
+/* Cursor überall ausblenden */
+button, a, input {
+    cursor: none !important;
+}
+
+/* RIGHT BUTTONS – direkt am Rand, untereinander */
+.side-button,
+.side-button2 {
+    position: fixed;
+    right: 5px;
+    background: rgba(0, 157, 255, 0.3);
+    border: 2px solid #009dff;
+    padding: 12px 18px;
+    border-radius: 10px 0 0 10px;
+    color: #4aa3ff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 12px #009dff;
+    z-index: 9997;
+    transition: 0.25s ease;
+    text-align: center;
+    min-width: 220px;
+}
+
+.side-button { top: 40%; transform: translateY(-50%); }
+.side-button2 { top: 52%; transform: translateY(-50%); }
+
+.side-button:hover,
+.side-button2:hover {
+    background: rgba(0, 157, 255, 0.5);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 0 20px #009dff;
+}
+
+.side-button3 {
+    position: fixed;
+    right: 5px;
+    top: 64%;
+    transform: translateY(-50%);
+    background: rgba(0, 157, 255, 0.3);
+    border: 2px solid #009dff;
+    padding: 12px 18px;
+    border-radius: 10px 0 0 10px;
+    color: #4aa3ff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 12px #009dff;
+    z-index: 9997;
+    transition: 0.25s ease;
+    min-width: 220px;
+    text-align: center;
+}
+
+.side-button3:hover {
+    background: rgba(0, 157, 255, 0.5);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 0 20px #009dff;
+}
+
+.side-button4 {
+    position: fixed;
+    right: 5px;
+    top: 76%;
+    transform: translateY(-50%);
+    background: rgba(0, 157, 255, 0.3);
+    border: 2px solid #009dff;
+    padding: 12px 18px;
+    border-radius: 10px 0 0 10px;
+    color: #4aa3ff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 12px #009dff;
+    z-index: 9997;
+    transition: 0.25s ease;
+    min-width: 220px;
+    text-align: center;
+}
+
+.side-button4:hover {
+    background: rgba(0, 157, 255, 0.5);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 0 20px #009dff;
+}
+
+
+/* SLIDE POPUPS */
+.slide-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(200%, -50%);
+    width: 480px;
+    max-height: 80%;
+    overflow-y: auto;
+    background: rgba(30, 30, 30, 0.92);
+    border: 2px solid #009dff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 25px #009dff, 0 0 50px #009dff;
+    z-index: 9996;
+    opacity: 0;
+    transition: 0.6s ease;
+    scrollbar-width: none;
+}
+
+.slide-popup::-webkit-scrollbar {
+    display: none;
+}
+
+.slide-popup.open {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.slide-popup h2 {
+    color: #4aa3ff;
+    text-shadow: 0 0 10px #0077cc;
+}
+
+.slide-popup h3 {
+    color: #4aa3ff;
+    margin-top: 20px;
+}
+
+.close-panel {
+    background: #009dff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #009dff;
+    transition: 0.2s;
+}
+
+.close-panel:hover {
+    background: #007acc;
+    transform: scale(1.05);
+}
 </style>
 </head>
 
@@ -164,6 +371,188 @@
 <!-- Neon Cursor -->
 <div class="neon-cursor" id="cursor"></div>
 
+<!-- RIGHT BUTTONS -->
+<div class="side-button" onclick="togglePopup('popupKonzept')">Konzept der Organisation</div>
+<div class="side-button2" onclick="togglePopup('popupRaenge')">Ränge</div>
+<div class="side-button3" onclick="togglePopup('popupAbteilungen')">Abteilungen</div>
+<div class="side-button4" onclick="togglePopup('popupLeader')">Was zeichnet mich aus?</div>
+
+<!-- POPUP: KONZEPT -->
+<div class="slide-popup" id="popupKonzept">
+    <h2>Konzept meiner Organisation</h2>
+
+    <h3>Aufnahmekriterien</h3>
+    <ul>
+        <li>mindestens Visum Stufe 8</li>
+        <li>Keine Vorstrafen</li>
+        <li>Mindestalter von 16 Jahren (Ausnahmen möglich)</li>
+        <li>Mindestens Rucksack Level 2</li>
+        <li>gültiger Waffen- und Führerschein</li>
+    </ul>
+
+    <h3>Bewerben</h3>
+    <p>
+        Geplant ist eine offene Bewerbungsrunde pro Woche.<br>
+        Außerhalb dieser Bewerbungsrunden kann man sich täglich zwischen <b>18:00 und 21:00 Uhr</b> beim LSPD bewerben.
+    </p>
+
+    <h3>Daily Meeting</h3>
+    <p>
+        Die Meetings aller Mitarbeiterinnen und Mitarbeiter finden täglich um <b>19:00 Uhr</b> statt.
+        Dort werden Themen oder Anliegen der Mitarbeiterinnen und Mitarbeiter besprochen.
+    </p>
+
+    <h3>Dienstpflicht</h3>
+    <p>
+        Die Dienstpflichtzeit gilt von Montag bis Sonntag jeweils von<br>
+        <b>18:00 - 22:00 Uhr</b>.
+    </p>
+
+    <button class="close-panel" onclick="togglePopup('popupKonzept')">Schließen</button>
+</div>
+
+<!-- POPUP: RÄNGE -->
+<div class="slide-popup" id="popupRaenge">
+    <h2>Ränge</h2>
+
+    <h3>-- Leaderschaft --</h3>
+    <ul>
+        <li>30. Chief of Police</li>
+        <li>29. Deputy Chief of Police</li>
+        <li>28. Assistant Chief of Police</li>
+        <li>27. Advising Chief of Police</li>
+    </ul>
+
+    <h3>-- High Command Lead --</h3>
+    <ul>
+        <li>26. [LSPD] Chief of Department</li>
+        <li>25. [LSPD] Deputy of Department</li>
+    </ul>
+
+    <h3>-- High Command --</h3>
+    <ul>
+        <li>24. [LSPD] Police Commander</li>
+        <li>23. [LSPD] Police Inspector</li>
+    </ul>
+
+    <h3>-- Administration --</h3>
+    <ul>
+        <li>22. HR Coordinator</li>
+    </ul>
+
+    <h3>-- Department --</h3>
+    <ul>
+        <li>21. [LSPD] IAD Investigator</li>
+        <li>20. [LSPD] S.W.A.T. Captain</li>
+        <li>19. [LSPD] Enforcement Supervisor</li>
+        <li>18. [LSPD] Press Associator</li>
+    </ul>
+
+    <h3>-- Media --</h3>
+    <ul>
+        <li>17. [LSPD] Special Police Officer</li>
+    </ul>
+
+    <h3>-- Administration --</h3>
+    <ul>
+        <li>16. [LSPD] HR Assistant</li>
+    </ul>
+
+    <h3>-- Command Lead --</h3>
+    <ul>
+        <li>15. [LSPD] Captain</li>
+    </ul>
+
+    <h3>-- Command --</h3>
+    <ul>
+        <li>14. [LSPD] Lieutenant</li>
+        <li>13. [LSPD] Sergeant</li>
+        <li>12. [LSPD] Detective</li>
+        <li>11. [LSPD] Corporal</li>
+    </ul>
+
+    <h3>-- Supervisor --</h3>
+    <ul>
+        <li>10. [LSPD] Lead Supervisor</li>
+        <li>09. [LSPD] Senior Supervisor</li>
+        <li>08. [LSPD] Supervising Officer</li>
+    </ul>
+
+    <h3>-- Officer --</h3>
+    <ul>
+        <li>07. [LSPD] Officer First Class</li>
+        <li>06. [LSPD] Officer II</li>
+        <li>05. [LSPD] Officer I</li>
+    </ul>
+
+    <h3>-- Officer in Education --</h3>
+    <ul>
+        <li>04. [LSPD] Rookie</li>
+    </ul>
+
+    <h3>-- Bewerber Rang --</h3>
+    <ul>
+        <li>03. [LSPD] Cadet</li>
+    </ul>
+
+    <h3>-- Sonstige --</h3>
+    <ul>
+        <li>02. [LSPD] Urlaub</li>
+        <li>01. [LSPD] Suspendiert</li>
+    </ul>
+
+    <button class="close-panel" onclick="togglePopup('popupRaenge')">Schließen</button>
+</div>
+
+<div class="slide-popup" id="popupAbteilungen">
+    <h2>Abteilungen des LSPD</h2>
+
+    <h3>Human Resources (HR)</h3>
+    <p>Die Human Resources ist die Personalabteilung des LSPD und zuständig für das Einstellen der Bewerber. Sie führen Bewerbungsgespräche, kümmern sich um Rank Ups und halten die Personalakten aktuell.</p>
+
+    <h3>Police Academy (PA)</h3>
+    <p>Die Police Academy ist eine Abteilung im LSPD, die sich um die Ausbildungen und das Weiterbilden der Officer kümmert.</p>
+
+    <h3>Special Weapons and Tactics (SWAT)</h3>
+    <p>Die S.W.A.T. ist die Spezialeinheit des LSPD und leitet alle Events wie Flugzeugträger, Banküberfall, Informanten, Pitting, U-Boot sowie Razzien.</p>
+
+    <h3>Task Force (TF)</h3>
+    <p>Die Task Force ist für die Beweissammlung gegen Gangs und Familien zuständig und arbeitet eng mit der FIB CIRG zusammen.</p>
+
+    <h3>Internal Affairs Division (IAD)</h3>
+    <p>Die IAD bekämpft Korruption innerhalb des LSPD und arbeitet eng mit der FIBCO sowie der JUZ zusammen.</p>
+
+    <h3>Patrol Unit (PU)</h3>
+    <p>Die Patrol Unit betreut Mitarbeiter, die keiner Abteilung angehören, macht Streifeneinteilungen und besetzt die Leitstelle.</p>
+
+    <h3>Press Relations (PR)</h3>
+    <p>Die PR-Abteilung kümmert sich um den Austausch von Informationen zwischen LSPD und Bürgern und organisiert Events.</p>
+
+    <h3>TOW Truck Department (TOW)</h3>
+    <p>Die TOW-Abteilung kümmert sich um das Abschleppen von Falschparkern.</p>
+
+    <button class="close-panel" onclick="togglePopup('popupAbteilungen')">Schließen</button>
+</div>
+
+<div class="slide-popup" id="popupLeader">
+    <h2>Was zeichnet mich als Leader aus?</h2>
+
+    <p>
+        Als Leaderin zeichnen mich vor allem meine Führungsqualitäten aus. Unter DeShawn Chaplin und Sophia Hagedorn konnte ich umfangreiche Erfahrung sammeln und war mehrfach Teil der Leaderschaft.
+    </p>
+
+    <p>
+         </p>
+
+    <p>
+        Ich verfüge über ein starkes Durchsetzungsvermögen und Zielstrebigkeit – wenn ich ein Ziel habe, gebe ich alles, um es zu erreichen.
+    </p>
+
+    <button class="close-panel" onclick="togglePopup('popupLeader')">Schließen</button>
+</div>
+
+
+<!-- MAIN CONTENT -->
 <div class="container">
 
     <div class="neon-line"></div>
@@ -201,43 +590,6 @@
         Zudem kenne ich die RP‑Regeln und lege großen Wert auf professionelles Verhalten.
     </p>
 
-    <h2>Rangstruktur des LSPD (30 Ränge)</h2>
-
-    <div class="rank-list">
-        <ol>
-            <li>Cadet</li>
-            <li>Officer I</li>
-            <li>Officer II</li>
-            <li>Officer III</li>
-            <li>Senior Lead Officer</li>
-            <li>Sergeant I</li>
-            <li>Sergeant II</li>
-            <li>Detective I</li>
-            <li>Detective II</li>
-            <li>Detective III</li>
-            <li>Lieutenant I</li>
-            <li>Lieutenant II</li>
-            <li>Captain I</li>
-            <li>Captain II</li>
-            <li>Captain III</li>
-            <li>Commander</li>
-            <li>Assistant Chief</li>
-            <li>Deputy Chief</li>
-            <li>Chief of Police</li>
-            <li>Special Operations Officer</li>
-            <li>SWAT Operator</li>
-            <li>SWAT Senior Operator</li>
-            <li>SWAT Lieutenant</li>
-            <li>SWAT Captain</li>
-            <li>Training Officer</li>
-            <li>Senior Training Officer</li>
-            <li>Internal Affairs Agent</li>
-            <li>Internal Affairs Senior Agent</li>
-            <li>Division Leader</li>
-            <li>High Command</li>
-        </ol>
-    </div>
-
     <h2>Schlusswort</h2>
     <p>
         Ich würde mich sehr freuen, Teil des LSPD zu werden und gemeinsam mit Ihnen für ein sicheres Los Santos zu sorgen.
@@ -258,21 +610,35 @@
 
 </div>
 
+<!-- Welcome Popup -->
+<div class="welcome-overlay" id="welcomePopup">
+    <div class="welcome-box">
+        <h2>Willkommen, Officer Bewerber!</h2>
+        <p>
+            Vielen Dank, dass du dir die Zeit nimmst, diese LSPD‑Bewerbung anzusehen.<br>
+            Bitte bestätige, dass du bereit bist fortzufahren.
+        </p>
+        <button class="welcome-btn" onclick="closeWelcome()">OK</button>
+    </div>
+</div>
+
 <script>
-    const cursor = document.getElementById("cursor");
+const cursor = document.getElementById("cursor");
 
-    document.addEventListener("mousemove", (e) => {
-        cursor.style.top = e.clientY + "px";
-        cursor.style.left = e.clientX + "px";
-    });
+document.addEventListener("mousemove", (e) => {
+    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+});
 
-    document.addEventListener("mousedown", () => {
-        cursor.style.transform = "translate(-50%, -50%) scale(0.7)";
-    });
+function closeWelcome() {
+    const popup = document.getElementById("welcomePopup");
+    popup.classList.add("popup-hide");
+    setTimeout(() => popup.style.display = "none", 600);
+}
 
-    document.addEventListener("mouseup", () => {
-        cursor.style.transform = "translate(-50%, -50%) scale(1)";
-    });
+function togglePopup(id) {
+    document.getElementById(id).classList.toggle("open");
+}
 </script>
 
 </body>
