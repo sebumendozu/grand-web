@@ -49,9 +49,10 @@ body::before {
     z-index: 9999;
 }
 
-/* Container */
+/* Container – breiter gemacht */
 .container {
-    width: 65%;
+    width: 75%;
+    max-width: 1100px;
     background: rgba(30, 30, 30, 0.85);
     padding: 40px;
     border-radius: 15px;
@@ -224,11 +225,11 @@ button, a, input {
     cursor: none !important;
 }
 
-/* RIGHT BUTTONS – direkt am Rand, untereinander */
+/* RIGHT BUTTONS – nur 2 Stück */
 .side-button,
 .side-button2 {
     position: fixed;
-    right: 5px;
+    right: 40px;
     background: rgba(0, 157, 255, 0.3);
     border: 2px solid #009dff;
     padding: 12px 18px;
@@ -253,59 +254,6 @@ button, a, input {
     transform: translateY(-50%) scale(1.05);
     box-shadow: 0 0 20px #009dff;
 }
-
-.side-button3 {
-    position: fixed;
-    right: 5px;
-    top: 64%;
-    transform: translateY(-50%);
-    background: rgba(0, 157, 255, 0.3);
-    border: 2px solid #009dff;
-    padding: 12px 18px;
-    border-radius: 10px 0 0 10px;
-    color: #4aa3ff;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 0 12px #009dff;
-    z-index: 9997;
-    transition: 0.25s ease;
-    min-width: 220px;
-    text-align: center;
-}
-
-.side-button3:hover {
-    background: rgba(0, 157, 255, 0.5);
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 0 20px #009dff;
-}
-
-.side-button4 {
-    position: fixed;
-    right: 5px;
-    top: 76%;
-    transform: translateY(-50%);
-    background: rgba(0, 157, 255, 0.3);
-    border: 2px solid #009dff;
-    padding: 12px 18px;
-    border-radius: 10px 0 0 10px;
-    color: #4aa3ff;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 0 12px #009dff;
-    z-index: 9997;
-    transition: 0.25s ease;
-    min-width: 220px;
-    text-align: center;
-}
-
-.side-button4:hover {
-    background: rgba(0, 157, 255, 0.5);
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 0 20px #009dff;
-}
-
 
 /* SLIDE POPUPS */
 .slide-popup {
@@ -372,233 +320,100 @@ button, a, input {
 <div class="neon-cursor" id="cursor"></div>
 
 <!-- RIGHT BUTTONS -->
-<div class="side-button" onclick="togglePopup('popupKonzept')">Konzept der Organisation</div>
-<div class="side-button2" onclick="togglePopup('popupRaenge')">Ränge</div>
-<div class="side-button3" onclick="togglePopup('popupAbteilungen')">Abteilungen</div>
-<div class="side-button4" onclick="togglePopup('popupLeader')">Was zeichnet mich aus?</div>
+<div class="side-button" onclick="togglePopup('popupKonzept')">Nutzen für das FIB</div>
+<div class="side-button2" onclick="togglePopup('popupAufgaben')">Aufgaben der Abteilung</div>
 
 <!-- POPUP: KONZEPT -->
 <div class="slide-popup" id="popupKonzept">
-    <h2>Konzept meiner Organisation</h2>
+    <h2>Aufgaben der Abteilung</h2>
 
-    <h3>Aufnahmekriterien</h3>
     <ul>
-        <li>mindestens Visum Stufe 8</li>
-        <li>Keine Vorstrafen</li>
-        <li>Mindestalter von 16 Jahren (Ausnahmen möglich)</li>
-        <li>Mindestens Rucksack Level 2</li>
-        <li>gültiger Waffen- und Führerschein</li>
-    </ul>
-
-    <h3>Bewerben</h3>
-    <p>
-        Geplant ist eine offene Bewerbungsrunde pro Woche.<br>
-        Außerhalb dieser Bewerbungsrunden kann man sich täglich zwischen <b>18:00 und 21:00 Uhr</b> beim LSPD bewerben.
-    </p>
-
-    <h3>Daily Meeting</h3>
-    <p>
-        Die Meetings aller Mitarbeiterinnen und Mitarbeiter finden täglich um <b>19:00 Uhr</b> statt.
-        Dort werden Themen oder Anliegen der Mitarbeiterinnen und Mitarbeiter besprochen.
-    </p>
-
-    <h3>Dienstpflicht</h3>
-    <p>
-        Die Dienstpflichtzeit gilt von Montag bis Sonntag jeweils von<br>
-        <b>18:00 - 22:00 Uhr</b>.
-    </p>
+	<li>Erhöhte Sicherheit: Schutz sensibler Informationen, Einrichtungen und Schlüsselpersonen.</li>
+	<li>Professionalisierung: Spezialisiertes Personal steigert Effizienz und Reaktionsgeschwindigkeit.</li>
+	<li>Prävention: Frühzeitige Erkennung von Gefahren reduziert Risiken für das gesamte Bureau.</li>
+	<li>Reputation: Das FIB wird als gut organisierte, sichere und professionell agierende Behörde wahrgenommen wodurch wir zeigen das wir da sind und was drauf haben.</li>
+ </ul>
 
     <button class="close-panel" onclick="togglePopup('popupKonzept')">Schließen</button>
 </div>
 
-<!-- POPUP: RÄNGE -->
-<div class="slide-popup" id="popupRaenge">
-    <h2>Ränge</h2>
+<!-- POPUP: AUFGABEN DER ABTEILUNG -->
+<div class="slide-popup" id="popupAufgaben">
+    <h2>Aufgaben der Abteilung</h2>
 
-    <h3>-- Leaderschaft --</h3>
-    <ul>
-        <li>30. Chief of Police</li>
-        <li>29. Deputy Chief of Police</li>
-        <li>28. Assistant Chief of Police</li>
-        <li>27. Advising Chief of Police</li>
-    </ul>
-
-    <h3>-- High Command Lead --</h3>
-    <ul>
-        <li>26. [LSPD] Chief of Department</li>
-        <li>25. [LSPD] Deputy of Department</li>
-    </ul>
-
-    <h3>-- High Command --</h3>
-    <ul>
-        <li>24. [LSPD] Police Commander</li>
-        <li>23. [LSPD] Police Inspector</li>
-    </ul>
-
-    <h3>-- Administration --</h3>
-    <ul>
-        <li>22. HR Coordinator</li>
-    </ul>
-
-    <h3>-- Department --</h3>
-    <ul>
-        <li>21. [LSPD] IAD Investigator</li>
-        <li>20. [LSPD] S.W.A.T. Captain</li>
-        <li>19. [LSPD] Enforcement Supervisor</li>
-        <li>18. [LSPD] Press Associator</li>
-    </ul>
-
-    <h3>-- Media --</h3>
-    <ul>
-        <li>17. [LSPD] Special Police Officer</li>
-    </ul>
-
-    <h3>-- Administration --</h3>
-    <ul>
-        <li>16. [LSPD] HR Assistant</li>
-    </ul>
-
-    <h3>-- Command Lead --</h3>
-    <ul>
-        <li>15. [LSPD] Captain</li>
-    </ul>
-
-    <h3>-- Command --</h3>
-    <ul>
-        <li>14. [LSPD] Lieutenant</li>
-        <li>13. [LSPD] Sergeant</li>
-        <li>12. [LSPD] Detective</li>
-        <li>11. [LSPD] Corporal</li>
-    </ul>
-
-    <h3>-- Supervisor --</h3>
-    <ul>
-        <li>10. [LSPD] Lead Supervisor</li>
-        <li>09. [LSPD] Senior Supervisor</li>
-        <li>08. [LSPD] Supervising Officer</li>
-    </ul>
-
-    <h3>-- Officer --</h3>
-    <ul>
-        <li>07. [LSPD] Officer First Class</li>
-        <li>06. [LSPD] Officer II</li>
-        <li>05. [LSPD] Officer I</li>
-    </ul>
-
-    <h3>-- Officer in Education --</h3>
-    <ul>
-        <li>04. [LSPD] Rookie</li>
-    </ul>
-
-    <h3>-- Bewerber Rang --</h3>
-    <ul>
-        <li>03. [LSPD] Cadet</li>
-    </ul>
-
-    <h3>-- Sonstige --</h3>
-    <ul>
-        <li>02. [LSPD] Urlaub</li>
-        <li>01. [LSPD] Suspendiert</li>
-    </ul>
-
-    <button class="close-panel" onclick="togglePopup('popupRaenge')">Schließen</button>
-</div>
-
-<div class="slide-popup" id="popupAbteilungen">
-    <h2>Abteilungen des LSPD</h2>
-
-    <h3>Human Resources (HR)</h3>
-    <p>Die Human Resources ist die Personalabteilung des LSPD und zuständig für das Einstellen der Bewerber. Sie führen Bewerbungsgespräche, kümmern sich um Rank Ups und halten die Personalakten aktuell.</p>
-
-    <h3>Police Academy (PA)</h3>
-    <p>Die Police Academy ist eine Abteilung im LSPD, die sich um die Ausbildungen und das Weiterbilden der Officer kümmert.</p>
-
-    <h3>Special Weapons and Tactics (SWAT)</h3>
-    <p>Die S.W.A.T. ist die Spezialeinheit des LSPD und leitet alle Events wie Flugzeugträger, Banküberfall, Informanten, Pitting, U-Boot sowie Razzien.</p>
-
-    <h3>Task Force (TF)</h3>
-    <p>Die Task Force ist für die Beweissammlung gegen Gangs und Familien zuständig und arbeitet eng mit der FIB CIRG zusammen.</p>
-
-    <h3>Internal Affairs Division (IAD)</h3>
-    <p>Die IAD bekämpft Korruption innerhalb des LSPD und arbeitet eng mit der FIBCO sowie der JUZ zusammen.</p>
-
-    <h3>Patrol Unit (PU)</h3>
-    <p>Die Patrol Unit betreut Mitarbeiter, die keiner Abteilung angehören, macht Streifeneinteilungen und besetzt die Leitstelle.</p>
-
-    <h3>Press Relations (PR)</h3>
-    <p>Die PR-Abteilung kümmert sich um den Austausch von Informationen zwischen LSPD und Bürgern und organisiert Events.</p>
-
-    <h3>TOW Truck Department (TOW)</h3>
-    <p>Die TOW-Abteilung kümmert sich um das Abschleppen von Falschparkern.</p>
-
-    <button class="close-panel" onclick="togglePopup('popupAbteilungen')">Schließen</button>
-</div>
-
-<div class="slide-popup" id="popupLeader">
-    <h2>Was zeichnet mich als Leader aus?</h2>
-
+    <h3>Personenschutz</h3>
     <p>
-        Als Leaderin zeichnen mich vor allem meine Führungsqualitäten aus. Unter DeShawn Chaplin und Sophia Hagedorn konnte ich umfangreiche Erfahrung sammeln und war mehrfach Teil der Leaderschaft.
+        Schutz von Agenten, Führungskräften und VIPs bei Einsätzen, Veranstaltungen oder außerhalb des Dienstes.
     </p>
 
+    <h3>Objektschutz</h3>
     <p>
-         </p>
-
-    <p>
-        Ich verfüge über ein starkes Durchsetzungsvermögen und Zielstrebigkeit – wenn ich ein Ziel habe, gebe ich alles, um es zu erreichen.
+        Sicherung sensibler Einrichtungen und kritischer Infrastruktur.
     </p>
 
-    <button class="close-panel" onclick="togglePopup('popupLeader')">Schließen</button>
-</div>
+    <h3>Gefahrenanalyse & Prävention</h3>
+    <p>
+        Identifikation potenzieller Bedrohungen, Risikoanalysen und Erstellung von Sicherheitsplänen.
+    </p>
 
+    <h3>Intervention bei Bedrohungen</h3>
+    <p>
+        Schnellreaktion bei Angriffen, Evakuierungen und Schutzmaßnahmen.
+    </p>
+
+   
+    <button class="close-panel" onclick="togglePopup('popupAufgaben')">Schließen</button>
+</div>
 
 <!-- MAIN CONTENT -->
 <div class="container">
 
     <div class="neon-line"></div>
 
-    <img class="lspd-star" src="https://aa93a10d15.cbaul-cdnwnd.com/f471442beed9e770ff5094ddbdec5dfe/200000056-5b8a25b8a4/Screenshot_797-removebg-preview-8.png?ph=aa93a10d15" alt="LSPD Stern">
+    <img class="lspd-star" src="https://copilot.microsoft.com/th/id/BCO.5de9b42a-45bd-492e-b4ad-534633240e59.png" alt="LSPD Stern">
 
-    <h1>Bewerbung zum Leader - Los Santos Police Department</h1>
+    <h1>Advanced Protection Unit (APU)</h1>
 
     <div class="neon-line"></div>
 
     <div class="info-box">
-        <p><strong>Name:</strong> Daniel Shadow</p>
-        <p><strong>Visum:</strong> 22</p>
-        <p><strong>Discordname:</strong> daniel_kch</p>
-        <p><strong>Bürger-ID:</strong> 166023</p>
+        <p><strong>Name:</strong> Daniel Schustermann</p>
+        <p><strong>Visum:</strong> 23</p>
+        <p><strong>ID:</strong> 166023</p>
+        <p><strong>Rang:</strong> 9. Field Agent</p>
     </div>
+
+    <h2>Persönliche Informationen</h2>
+    <p>
+        Mein Name ist Daniel, ich habe Erfahrung im Bereich Personenschutz da ich im USSS für eine Zeit lang in der OPP war bis ich zur HR Vize Leitung dort wurde.
+        Durch meine früheren Tätigkeit konnte ich umfassende Kenntnisse im professionellem Personenschutz sammeln.
+        Ich verfüge über das Wissen und die Verantwortung da ich weiß, wie man eine Abteilung leitet.
+    </p>
 
     <h2>Motivation</h2>
     <p>
-        Seit meiner Ankunft in Los Santos ist es mein Ziel, aktiv zur Sicherheit der Stadt beizutragen.
-        Das LSPD steht für Ordnung, Professionalität und Gerechtigkeit – Werte, die ich teile und unterstützen möchte.
-    </p>
-
-    <h2>Stärken</h2>
-    <ul>
-        <li>Teamfähigkeit & klare Kommunikation</li>
-        <li>Disziplin & Verantwortungsbewusstsein</li>
-        <li>Ruhiges Verhalten in Stresssituationen</li>
-        <li>Schnelle Auffassungsgabe & Lernbereitschaft</li>
-    </ul>
-
-    <h2>Erfahrung</h2>
-    <p>
-        Ich verfüge über Erfahrung im Umgang mit Bürgern, Konfliktsituationen und strukturiertem Arbeiten.
-        Zudem kenne ich die RP‑Regeln und lege großen Wert auf professionelles Verhalten.
+        Die steigende Zahl von Bedrohungen gegen hochrangige Persönlichkeiten und sensible Objekte erfordert eine spezialisierte Einheit,
+        die präventiv arbeitet und auf Notfälle vorbereitet ist. Mit der Gründung der Abteilung für Objekt- und Personenschutz möchte ich
+        die Sicherheit des FIB und seiner Mitarbeiter auf ein neues Niveau heben und gleichzeitig unsere Einsatzfähigkeit in kritischen Situationen verbessern.
     </p>
 
     <h2>Schlusswort</h2>
     <p>
-        Ich würde mich sehr freuen, Teil des LSPD zu werden und gemeinsam mit Ihnen für ein sicheres Los Santos zu sorgen.
-        Vielen Dank für die Prüfung meiner Bewerbung.
+        Die Abteilung für Objekt- und Personenschutz ist ein entscheidender Schritt, um die Sicherheit des FIB nachhaltig zu verbessern.
+        Mit qualifiziertem Personal, klaren Prozessen und passender Ausrüstung stellen wir sicher, dass Bedrohungen früh erkannt,
+        präventiv abgewehrt und im Ernstfall schnell erledigt werden.
     </p>
+
+    <h2>Voraussetzungen für die Aufnahme</h2>
+    <ul>
+        <li>Mind. Rang: 9. Field Agent</li>
+        <li>Abgeschlossene Ausbildung der TST</li>
+        <li>Bestehen eines Auswahlverfahrens durch ein mündliches Gespräch</li>
+    </ul>
 
     <p class="footer">
         Mit freundlichen Grüßen<br>
-        <b>Daniel Shadow</b>
+        <b>Daniel Schustermann</b>
     </p>
 
     <div class="neon-line"></div>
@@ -613,9 +428,9 @@ button, a, input {
 <!-- Welcome Popup -->
 <div class="welcome-overlay" id="welcomePopup">
     <div class="welcome-box">
-        <h2>Willkommen, Officer Bewerber!</h2>
+        <h2>Willkommen</h2>
         <p>
-            Vielen Dank, dass du dir die Zeit nimmst, diese LSPD‑Bewerbung anzusehen.<br>
+            Vielen Dank, dass du dir die Zeit nimmst, diese Website anzusehen.<br>
             Bitte bestätige, dass du bereit bist fortzufahren.
         </p>
         <button class="welcome-btn" onclick="closeWelcome()">OK</button>
